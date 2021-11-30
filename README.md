@@ -14,6 +14,13 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 1) **Think about how to validate each of your features according to a Definition of Done**
 1) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
 
+## HTML Setup
+1) Three divs/imgs for cups
+  -Why? to show the user which cup the ball was hidden under.
+  -How? `img.src`
+2) Three buttons
+
+3) Three divs for win, loss, total
 Additional considerations:
 - Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
 - Consider your data model. 

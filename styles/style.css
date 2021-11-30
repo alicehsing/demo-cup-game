@@ -39,6 +39,35 @@ main {
     margin-bottom: calc(var(--footer-height));
 }
 
+.cup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    margin-top: 100px;
+}
+
+.cup div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height:200px;
+    margin: 10px;
+}
+
+#button-one, #button-two, #button-three {
+    background-color: bisque;
+    font-size: medium;
+    border-radius: 10px;
+    width: 50px;
+    align-self: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
 section {
     background-color: var(--color5);
     max-width: 80%;
