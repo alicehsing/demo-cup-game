@@ -17,10 +17,29 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 ## HTML Setup
 1) Three divs/imgs for cups
   -Why? to show the user which cup the ball was hidden under.
-  -How? `img.src`
+  -How? `img.src = './assets/correct-cup.png`
+
 2) Three buttons
+  -Why? Tells us which cup has been picked, and WHEN they pick it.
+  -How? `myButton.addEventListener('click', () => {})`
 
 3) Three divs for win, loss, total
+  -Why? Display the current state to the user
+  -How? `winsEl.textContent = winCount`
+
+## Events
+  - User clicks any of the three cup buttons
+    - (reset image of all cups)
+    - Set State
+      - Increment total attemps
+      - Use Math.floor(Math.random()) to decide which cup is correct
+      - Compare the correct cup with the cup the user clicked
+        -if user clicked the correct cup, increment win
+        - (optionally: if the user did NOT click the correct cup, increment loss)
+    Update DOM
+      - Change image of the correct cup
+      - Change numbers in winEl, lossEl, totalEl
+
 Additional considerations:
 - Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
 - Consider your data model. 
