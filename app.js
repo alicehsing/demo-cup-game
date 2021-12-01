@@ -17,16 +17,6 @@ const randomCupNumber = [0, 1, 2];
 let correctGuesses = 0;
 let totalGuesses = 0;
 
-// User clicks any of the three cup buttons -> set event listeners 
-buttonOne.addEventListener('click', () => {
-
-    const correctCup = getRandomItem(randomCupNumber);
-    const userGuess = 0;
-
-    handleGuesses(userGuess, correctCup);
-
-});
-
 function getRandomItem(arr) {
     const index = Math.floor(Math.random() * arr.length);
     return arr[index];
@@ -39,9 +29,9 @@ function resetImages() {
 }
 
 function handleGuesses(userGuess, correctCup) {
-     // should reset the images
+   // should reset the images
     resetImages();
-     // increment total guesses
+   // increment total guesses
     totalGuesses++;
 
     const cupImgIds = [
@@ -53,14 +43,41 @@ function handleGuesses(userGuess, correctCup) {
     const correctImageEl = document.getElementById(cupImgIds[correctCup]);
 
     correctImageEl.src = './assets/correct-cup.png';
- 
+
     if (userGuess === correctCup) {
         correctGuesses++;
     }
 
+    if (userGuess !== correctCup) {
+        const incorrectImageEl = document.getElementById(cupImgIds[userGuess]);
+        incorrectImageEl.src = './assets/incorrect-cup.png';
+    }
 // update the DOM to show this change to the user (including the losses, not tracked directly in state)
     totalEl.textContent = totalGuesses;
     winsEl.textContent = correctGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
-
 }
+// User clicks any of the three cup buttons -> set event listeners 
+buttonOne.addEventListener('click', () => {
+
+    const correctCup = getRandomItem(randomCupNumber);
+    const userGuess = 0;
+
+    handleGuesses(userGuess, correctCup);
+});
+
+buttonTwo.addEventListener('click', () => {
+
+    const correctCup = getRandomItem(randomCupNumber);
+    const userGuess = 1;
+
+    handleGuesses(userGuess, correctCup);
+});
+
+buttonThree.addEventListener('click', () => {
+
+    const correctCup = getRandomItem(randomCupNumber);
+    const userGuess = 2;
+
+    handleGuesses(userGuess, correctCup);
+});
